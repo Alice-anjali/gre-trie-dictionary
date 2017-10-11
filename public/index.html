@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GRE Words Dictionary</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+  <body>
+    <div class="cntr">
+        <div class="cntr-innr">
+            <label class="search" for="inpt_search">
+                <input id="inpt_search" type="text" />
+            </label>
+        </div>
+        <div class="words">
+          Words Here!
+        </div>
+    </div>
+  </body>
+
+  <script>
+  $(document).ready(function(){
+    //script here
+    $("#inpt_search").on('focus', function () {
+      $(this).parent('label').addClass('active');
+    });
+
+    $("#inpt_search").on('blur', function () {
+      if($(this).val().length == 0)
+        $(this).parent('label').removeClass('active');
+    });
+  })
+  </script>
+</html>
