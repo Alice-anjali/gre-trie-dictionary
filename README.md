@@ -5,8 +5,8 @@ Built in NodeJS and ExpressJS
 ## Usage
 1. Clone this repository
 2. Navigate to the folder in a console
-3. Run `npm install & npm run`
-4. Subsequent starts only require `npm run`
+3. Run `npm install & npm start`
+4. Subsequent starts only require `npm start`
 
 ## Contributing
 1. Fork it!
