@@ -42,7 +42,7 @@ for(word in words){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 router.get('/get_trie',function(req, res, next) {
