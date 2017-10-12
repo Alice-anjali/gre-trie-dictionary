@@ -83,3 +83,28 @@ p {
    margin:auto;
    font-size:18px;
 }
+
+
+.word-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.word-table-row > td {
+  padding-bottom: 1rem;
+}
+
+.word-table * {
+  box-sizing: border-box;
+  
+}
+
+.word-table-word {
+  width: 33%;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.word-table-definition {
+  width: 66%;
+}
