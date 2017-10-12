@@ -37,7 +37,16 @@
     })
 
     $("#inpt_search").keyup(function () {
-      console.log(search_prefix_words(trie,$("#inpt_search").val()));
+      if($("#inpt_search").val() != ''){
+        words = search_prefix_words(trie,$("#inpt_search").val());
+        $("#word-list").html('');
+        for(key in words){
+          $("#word-list").append('<strong>'+key+':</strong> '+words[key]+'<br>')
+        }
+      }
+      else{
+        $("#word-list").html('Words Here!');
+      }
     });
   })
   </script>
