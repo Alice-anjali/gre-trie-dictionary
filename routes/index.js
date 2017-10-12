@@ -48,4 +48,5 @@ router.get('/', function(req, res, next) {
 router.get('/get_trie',function(req, res, next) {
   res.send(trie);
 });
+
 module.exports = router;
