@@ -39,10 +39,16 @@
     $("#inpt_search").keyup(function () {
       if($("#inpt_search").val() != ''){
         words = search_prefix_words(trie,$("#inpt_search").val());
-        $("#word-list").html('');
+        var $wordList = $("#word-list");
+        var $table = $("<table class='word-table'><tbody></tbdoy></table>");
+        var $tableBody = $table.find("tbody");
+
         for(key in words){
-          $("#word-list").append('<strong>'+key+':</strong> '+words[key]+'<br>')
+          var $row = $("<tr class='word-table-row'><td class='word-table-word'>" + key + "</td><td class='word-table-definition'>" + words[key] + "</td></tr>");
+          $tableBody.append($row);
         }
+
+        $wordList.html($table);
       }
       else{
         $("#word-list").html('Words Here!');
