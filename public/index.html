@@ -5,6 +5,7 @@
     <title>GRE Words Dictionary</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.2.1.min.js"></script>
+    <script src="javascripts/main.js"></script>
   </head>
   <body>
     <div class="cntr">
@@ -13,7 +14,7 @@
                 <input id="inpt_search" type="text" />
             </label>
         </div>
-        <div class="words">
+        <div class="words" id="word-list">
           Words Here!
         </div>
     </div>
@@ -36,7 +37,7 @@
     })
 
     $("#inpt_search").keyup(function () {
-      console.log(trie);
+      console.log(search_prefix_words(trie,$("#inpt_search").val()));
     });
   })
   </script>
