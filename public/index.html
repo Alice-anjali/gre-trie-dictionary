@@ -5,7 +5,7 @@
     <title>GRE Words Dictionary</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.2.1.min.js"></script>
-</head>
+  </head>
   <body>
     <div class="cntr">
         <div class="cntr-innr">
@@ -20,8 +20,8 @@
   </body>
 
   <script>
+  var trie;
   $(document).ready(function(){
-    //script here
     $("#inpt_search").on('focus', function () {
       $(this).parent('label').addClass('active');
     });
@@ -29,6 +29,14 @@
     $("#inpt_search").on('blur', function () {
       if($(this).val().length == 0)
         $(this).parent('label').removeClass('active');
+    });
+
+    $.get("/get_trie", function(data, status) {
+      trie = data;
+    })
+
+    $("#inpt_search").keyup(function () {
+      console.log(trie);
     });
   })
   </script>
