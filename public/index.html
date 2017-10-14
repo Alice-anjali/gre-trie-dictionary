@@ -41,12 +41,10 @@
         words = search_prefix_words(trie,$("#inpt_search").val());
         var $table = $('<table><tbody></tbody></table>');
         var $tableBody = $table.find("tbody");
-        var link = '';
+        var hinduLink = '';
         for(key in words){
-          console.log("l46");
-          link = "http://www.thehindu.com/search/?q="+ key +"&order=DESC&sort=publishdate";
-          console.log(link);
-          var $row = $('<tr><td><a href = '+ link +'>'+ key +':  </a></td>' + '<td>' + words[key] + '</td></tr>');
+          hinduLink = "http://www.thehindu.com/search/?q="+ key +"&order=DESC&sort=publishdate";
+          var $row = $('<tr><td>'+ key +':  </td><td><strong><a href = "'+ hinduLink + '">H</a></strong></td><td>'+ words[key] + '</td></tr>');
           $tableBody.append($row)
         }
         $('#word-list').html($table);
