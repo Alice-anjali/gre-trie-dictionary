@@ -39,10 +39,17 @@
     $("#inpt_search").keyup(function () {
       if($("#inpt_search").val() != ''){
         words = search_prefix_words(trie,$("#inpt_search").val());
-        $("#word-list").html('');
+        var $table = $('<table><tbody></tbody></table>');
+        var $tableBody = $table.find("tbody");
+        var link = '';
         for(key in words){
-          $("#word-list").append('<strong>'+key+':</strong> '+words[key]+'<br>')
+          console.log("l46");
+          link = "http://www.thehindu.com/search/?q="+ key +"&order=DESC&sort=publishdate";
+          console.log(link);
+          var $row = $('<tr><td><a href = '+ link +'>'+ key +':  </a></td>' + '<td>' + words[key] + '</td></tr>');
+          $tableBody.append($row)
         }
+        $('#word-list').html($table);
       }
       else{
         $("#word-list").html('Words Here!');
