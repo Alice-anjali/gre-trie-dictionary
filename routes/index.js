@@ -49,4 +49,12 @@ router.get('/get_trie',function(req, res, next) {
   res.send(trie);
 });
 
+router.get('/add_word',function(req, res, next) {
+  word = req.body.new_word
+  meaning = req.body.meaning
+  add_word(word, meaning);
+  res.redirect('/')
+});
+
+
 module.exports = router;
